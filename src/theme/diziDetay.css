@@ -1,0 +1,100 @@
+.detay_container{
+    width: 80%;
+    margin:5rem auto;
+    background-color: rgb(45,45,45);
+    border-top: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
+    border-bottom: 2px solid darkorange;
+    border-right: 2px solid darkorange;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: all 1s ease;
+}
+
+.detay_container:hover{
+    border:none;
+    transform: scale(1.2);
+}
+.detay_container:hover+img{
+   border-radius: 10%;
+}
+.detay-dizi {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    min-height: max-content;
+}
+
+.detay-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem 0.8rem;
+    filter:grayscale(70%); 
+}
+
+.detay-img img{
+    border-radius: 5px;
+}
+.dizi-detay-content {
+    display: flex;
+    padding: 15px 5px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.dizi-detay-content h2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dizi-detay-content p{
+    padding: 5px;
+    letter-spacing: 0.08rem;
+    font-size: 1rem;
+}
+
+.dizi-detay-content .description::first-letter{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: bold;
+    color:darkorange;
+}
+
+.dizi-detay-content .detay_btns{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    gap: 40px;
+}
+
+.detay_btns .favla-btn {
+    padding: 5px 30px;
+
+}
+@keyframes animationInfo {
+
+    50%   {transform: scale(1.5);}
+    100%  {transform: scale(1);}
+ 
+}
+.info_fav {
+    
+    width: 25%;
+    height: 40px;
+    margin:5px auto;
+    background-color: #000;
+    border:1px solid transparent;
+    position: relative;
+    animation-name: animationInfo;
+    animation-duration: 1s;
+    border-radius: 5px;
+    color: darkorange;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    display: none;
+}

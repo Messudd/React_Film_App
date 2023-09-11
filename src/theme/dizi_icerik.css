@@ -1,0 +1,56 @@
+.dizi_box {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-right: 10px solid darkorange;
+    border-radius: 8px;
+    background-color: rgb(45,45,45);
+}
+
+.dizi_img{
+    flex:1;
+    display: flex;
+    align-items: stretch;
+
+}
+.dizi_img img{
+    border:1px solid transparent;
+    border-radius: 4px;
+    width: 220px;
+}
+
+.dizi_icerik {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: center;
+    flex:2
+
+}
+
+.dizi_icerik h2 {
+    color:darkorange;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.dizi_icerik p{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 600;
+
+}
+
+.btns_all_dizi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+
+}

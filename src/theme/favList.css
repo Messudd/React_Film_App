@@ -1,0 +1,34 @@
+.filmContainer_fav{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    gap:5px;
+
+}
+
+.filmContainer_fav img{
+
+    width: 110px;
+    border-top: 2px solid darkorange;
+    border-left: 2px solid darkorange;
+    border-bottom: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    border-radius: 4px;
+    flex:2;
+}
+
+.filmContainer_fav img:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+.filmContent_fav{
+    margin-bottom: 5px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}

@@ -1,0 +1,449 @@
+@import './theme/favList.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+html{
+    overflow-x: hidden;
+    background-color: rgb(0,0,0);
+    scroll-behavior: smooth;
+}
+
+.App {
+    min-height: max-content;
+    width: 100vw;
+}
+
+@media screen and (max-width :400px) {
+
+    .main_container{
+        width: 100%;
+        min-height: max-content;
+    }
+
+    .filmListContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 60px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        padding: 2px 5px; 
+        width: 90%;
+        min-height:max-content;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color:#1d1d1d;
+        box-shadow: 2px 4px 3px #a0a0a0;
+    }
+    .filmContainer{
+
+        display: flex;
+        border:1px solid transparent;
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.8);
+        gap: 10px;
+        height:auto;
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+       
+    .preview_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        flex:1;
+        border:1px solid #0000;
+    }
+    #preview img {
+        width: 100px;    
+    }
+    #preview_content h2{
+        font-size: 10px; 
+    }
+    #preview_content p{
+        font-size: 8px;
+    }
+    #preview_content button{
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width:700px) {
+
+    .main_container {
+        width: 95%;
+        margin: 8px auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        gap:0.8rem;
+    }
+
+    .filmListContainer{
+
+        display: flex;
+        margin-top:50px;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        min-height:max-content;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color:#1d1d1d;
+        box-shadow: 2px 4px 3px #a0a0a0;
+        overflow: hidden;
+    }
+
+    .filmContainer{
+
+        display: flex;
+        border:1px solid transparent;
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.8);
+        gap: 10px;
+        width: 18%;
+        height:auto;
+        margin: 10px;
+        padding: 5px;
+    }
+}
+
+.kutu {
+    /* flex: 0.2; */
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    position:fixed;
+    top:0;
+    left: 5%;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    margin-top: 2px;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.kutu div {
+
+    color:whitesmoke;
+    font-size: large;
+}
+
+.kutu h1{
+
+    padding: 10px;
+    text-align: center;
+    color:darkorange;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+}
+.kutu span {
+    color:whitesmoke;
+}
+
+.kutu h1 span:last-child{
+
+    font-size: 20px;
+    margin-left: 0.5rem;
+}
+.switch {
+    position: absolute;
+    right: 5px;
+    display: inline-block;
+    width: 45px;
+    height: 23px;
+  }
+  
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #202020;
+    border:1px solid rgba(0,0,0,0.7);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 1px;
+    bottom: 1px;
+    background-color: darkorange;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.switch input:checked + .slider {
+    background-color: #e7e7e7;
+  }
+  
+.switch input:focus + .slider {
+    box-shadow: 0 0 1px #e7e7e7;
+  }
+  
+.switch input:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+  
+  /* Rounded sliders */
+.switch .slider.round {
+    border: 1px solid whitesmoke;
+    opacity: 0.8;
+    border-radius: 15px;
+  }
+  
+.switch .slider.round:before {
+    border-radius: 50%;
+  }
+
+.filmChangeList{
+
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap:3.5rem;
+    border-bottom : 4px solid #a0a0a0;
+    border-right:  4px solid #a0a0a0;
+    border-radius: 5px;
+    background-color:#1d1d1d;
+
+}
+
+.filmChangeList div{
+    cursor: pointer;
+    color:#ffff;
+}
+.filmChangeList span {
+    color: #ffff;
+}
+
+.filmChangeList .addFilm {
+
+    margin-bottom: 8px;
+    background-color: #1d1d1d;
+    border:1px solid transparent;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color:darkorange;
+    font-weight: bold;
+} 
+
+.filmChangeList .addFilm:hover{
+    transform: scale(1.1);
+    border: 1px solid whitesmoke;
+}
+
+.mainContent {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    border: 1px solid transparent;
+    background-color: #1d1d1d;
+    box-shadow: 2px 4px 3px #a0a0a0;
+    border-radius: 5px;
+
+}
+
+.favoriteFilmListContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    gap :10px;
+    align-items:center;
+    min-height: max-content;
+    border: 1px solid transparent;
+    background-color:#1d1d1d;
+    box-shadow: 2px 4px 3px #a0a0a0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+ /* #########################################  fİLM CONTAINER A AİT BOLGE   ############################################### */
+
+.filmContainer img {
+    width: 95px;
+    height: 135px;
+}
+
+.filmContainer img:hover{
+    transition: all 0.2s ease;
+    filter: blur(2px);
+    transform: rotateY(180deg);
+}
+
+.filmContent{
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 1rem;
+
+}
+.filmContainer .filmContent .incele_btn{
+
+    letter-spacing: 0.1rem;
+    transition: 0.5s;
+    background-color:rgb(39, 39, 39) ;
+    color:whitesmoke;
+    border:1px solid darkorange;
+}
+.filmContainer .filmContent .incele_btn:hover{
+
+    letter-spacing: 0.25rem;
+    box-shadow: 0 0 35px #c1532e ;
+}
+
+
+h2 {
+
+    font-size: 14px;
+    text-align: center;
+    color:darkorange;
+    font-weight: bold;
+
+}
+p{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 12px;
+    opacity: 0.7;
+
+}
+
+button {
+
+    font-size: 14px;
+    margin-top:10px;
+    text-align: center;
+    padding: 5px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:rgb(58, 58, 58);
+    border:1px solid whitesmoke;
+    transition: all 0.5s ease;
+    color:darkorange;
+} 
+
+.allFilm_btn {
+    border-radius: 4px;
+    margin-right: 15px;
+    color: darkorange;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+
+}
+.allFilm_btn:hover {
+    letter-spacing: 2px;
+    border:1px solid whitesmoke;
+
+}
+
+.all_content_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-height: max-content;
+    gap:3rem;
+    margin:5px auto;
+}
+.searchbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 2px;
+}
+
+#search_bar a{
+    display: flex;
+    align-items: center;
+}
+.inDiv{
+    
+    border:1px solid darkorange;
+    border-radius: 10px;
+    background-color: darkorange;
+
+}
+.searchbar label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.searchbar label input {
+    border:1px solid transparent;
+    border-radius: 10px;
+    margin-left: 25px;
+    min-height: 35px;
+    background-color:rgb(0,0,0);
+    padding: 4px;
+    font-size: 1rem;
+    color:whitesmoke;
+}
+.searchbar label input:focus {
+  outline: none;
+}
+.tum_dizi_container{
+    display: flex;
+    flex-direction: column;
+    margin: 2px auto;
+    padding: 3px;
+    width: 90%;
+    min-height: max-content;
+    gap: 3rem;
+
+}
+.upPage {
+
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.upPage a {
+    padding: 10px 30px;
+}
+
+/* ############################################################################################################### */
+
+/* PREVİEW BOLUMU CSS KISMI BURADAN ASSAĞIKI KISIMDA YER ALIR  */
+
+@import './theme/preview.css';
+
